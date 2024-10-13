@@ -37,8 +37,10 @@ return [
     */
 
     'locales' => [
+        'ru' => ['name' => 'Russian', 'script' => 'Cyrl', 'native' => 'русский', 'flag_code' => ''],
+        'en' => ['name' => 'English', 'script' => 'Latn', 'native' => 'English', 'flag_code' => 'us'],
+        'de' => ['name' => 'German', 'script' => 'Latn', 'native' => 'Deutsch', 'flag_code' => 'de'],
         //'ar' => ['name' => 'Arabic',                 'script' => 'Arab', 'native' => 'العربية', 'flag_code' => 'sa'],
-        //'en' => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'flag_code' => 'us'],
         //'fr' => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'flag_code' => 'fr'],
 
         // 'ace' => ['name' => 'Achinese',               'script' => 'Latn', 'native' => 'Aceh', 'flag_code' => ''],
@@ -70,7 +72,7 @@ return [
         //'cy'          => ['name' => 'Welsh',                  'script' => 'Latn', 'native' => 'Cymraeg', 'flag_code' => '' ],
         //'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'dansk', 'flag_code' => '' ],
         //'se'          => ['name' => 'Northern Sami',          'script' => 'Latn', 'native' => 'davvisámegiella', 'flag_code' => '' ],
-        //'de'          => ['name' => 'German',                 'script' => 'Latn', 'native' => 'Deutsch', 'flag_code' => 'de' ],
+
         //'luo'         => ['name' => 'Luo',                    'script' => 'Latn', 'native' => 'Dholuo', 'flag_code' => '' ],
         //'nv'          => ['name' => 'Navajo',                 'script' => 'Latn', 'native' => 'Diné bizaad', 'flag_code' => '' ],
         //'dua'         => ['name' => 'Duala',                  'script' => 'Latn', 'native' => 'duálá', 'flag_code' => '' ],
@@ -256,7 +258,7 @@ return [
         //'mk'          => ['name' => 'Macedonian',             'script' => 'Cyrl', 'native' => 'македонски', 'flag_code' => '' ],
         //'mn'          => ['name' => 'Mongolian (Cyrillic)',   'script' => 'Cyrl', 'native' => 'монгол', 'flag_code' => '' ],
         //'ce'          => ['name' => 'Chechen',                'script' => 'Cyrl', 'native' => 'нохчийн мотт', 'flag_code' => '' ],
-        'ru'          => ['name' => 'Russian',                'script' => 'Cyrl', 'native' => 'русский', 'flag_code' => '' ],
+
         //'sah'         => ['name' => 'Yakut',                  'script' => 'Cyrl', 'native' => 'саха тыла', 'flag_code' => '' ],
         //'tt'          => ['name' => 'Tatar',                  'script' => 'Cyrl', 'native' => 'татар теле', 'flag_code' => '' ],
         //'tg'          => ['name' => 'Tajik (Cyrillic)',       'script' => 'Cyrl', 'native' => 'тоҷикӣ', 'flag_code' => '' ],

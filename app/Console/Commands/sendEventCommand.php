@@ -34,7 +34,7 @@ class sendEventCommand extends Command
                     message: $event['description'],
                     start: $carbon,
                     end: Carbon::parse($event['end_time']),
-                    chat_id: 362569008,
+                    chat_id: -1002472839215,
                 ));
                 $events[$event['id']] = $event;
             } elseif ($carbon->timestamp >= ($time->timestamp - Carbon::parse('1 hour')->timestamp)) {
@@ -44,7 +44,7 @@ class sendEventCommand extends Command
                     message: $event['description'],
                     start: $carbon,
                     end: Carbon::parse($event['end_time']),
-                    chat_id: 362569008,
+                    chat_id: -1002472839215,
                 ));
                 $events[$event['id']] = $event;
             } elseif ($carbon->timestamp <= $time->timestamp) {
@@ -54,7 +54,7 @@ class sendEventCommand extends Command
                     message: $event['description'],
                     start: Carbon::parse($event['start_time']),
                     end: Carbon::parse($event['end_time']),
-                    chat_id: 362569008,
+                    chat_id: -1002472839215,
                 ));
             } else {
                 $events[$event['id']] = $event;

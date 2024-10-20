@@ -14,16 +14,13 @@ class TelegramController extends Controller
 
     public function index()
     {
-        $response = $this->telegram->getUpdates();
-
-        dump($response);
-        foreach ($response as $item) {
-            $this->telegram->sendMessage(
-                [
-                    'chat_id' => $item->getChat()->get('id'),
-                    'text' => 'Я жив',
-                ]
-            );
-        }
+        //$response = $this->telegram->getUpdates();
+        $this->telegram->sendMessage(
+            [
+                'chat_id' => '-1002472839215',
+                'text' => 'девил чорт',
+            ]
+        );
+        //dump($response);
     }
 }

@@ -13,6 +13,8 @@ return new class extends Migration {
         Schema::create('warriors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('chat_id')->nullable();
+            $table->string('telegram_nick')->nullable();
             $table->unsignedBigInteger('role_id')->nullable()->default(1);
             $table->unsignedBigInteger('group_id')->nullable()->default(1);
             $table->timestamps();

@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Events\SendToTelegramEvent;
+use App\Listeners\SendToTelegramListener;
+use App\Models\Event;
+use App\Observers\EventObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        SendToTelegramEvent::class => [
+            SendToTelegramListener::class,
+        ],
     ];
 
     /**
@@ -25,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Event::observe(EventObserver::class);
         //
     }
 

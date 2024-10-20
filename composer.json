@@ -5,14 +5,16 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "bezhansalleh/filament-language-switch": "^3.1",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "irazasyed/telegram-bot-sdk": "^3.14",
         "laravel/framework": "^10.10",
+        "laravel/horizon": "^5.29",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "predis/predis": "^2.2",
         "saade/filament-fullcalendar": "^3.0"
     },
     "require-dev": {

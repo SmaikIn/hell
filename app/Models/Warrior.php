@@ -9,7 +9,9 @@ class Warrior extends Model
     protected $fillable = [
         'name',
         'role_id',
-        'group_id'
+        'group_id',
+        'chat_id',
+        'telegram_nick'
     ];
 
     public function group(): \Illuminate\Database\Eloquent\Relations\BelongsTo

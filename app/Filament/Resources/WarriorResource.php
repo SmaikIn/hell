@@ -26,6 +26,10 @@ class WarriorResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('chat_id')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('telegram_nick')
+                    ->maxLength(255),
                 Forms\Components\Select::make('role_id')
                     ->relationship('role', 'name')
                     ->default(1),
@@ -40,6 +44,10 @@ class WarriorResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('chat_id')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('telegram_nick')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('role.name')
                     ->numeric()

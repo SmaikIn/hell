@@ -2,7 +2,9 @@
 
 namespace App\Console;
 
-use App\Console\Commands\sendEventCommand;
+use App\Console\Commands\SendDailyEventNotificationsCommand;
+use App\Console\Commands\SendEventNotificationsCommand;
+use App\Console\Commands\SendNextDayEventNotificationsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +15,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(sendEventCommand::class)->everyThirtySeconds();
+        $schedule->command(SendEventNotificationsCommand::class)->everyMinute();
+        $schedule->command(SendDailyEventNotificationsCommand::class)->dailyAt('08:00');
+        $schedule->command(SendNextDayEventNotificationsCommand::class)->dailyAt('22:00');
         // $schedule->command('inspire')->hourly();
     }
 

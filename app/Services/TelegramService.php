@@ -11,19 +11,19 @@ use Telegram\Bot\Api;
 final readonly class TelegramService
 {
     public function __construct(
-        private readonly Api $telegram
+        private Api $telegram
     )
     {
     }
 
     public function sendEvent(array $data): void
     {
-
-        $text = view('telegram.messageEvent', [
-            'dateStart' => Carbon::parse($data['start']),
-            'dateEnd' => Carbon::parse($data['end']) ,
-            'title' =>  $data['title'],
-            'message' => $data['message'],
+        $text = view('telegram.event', [
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'color' => $data['color'],
+            'start_time' => $data['start_time'],
+            'end_time' => $data['end_time'],
         ])->render();
 
         $this->telegram->sendMessage([

@@ -12,7 +12,7 @@ class SendToTelegramListener implements ShouldQueue
     public ?string $queue = 'default';
 
     public function __construct(
-        private TelegramService $telegramService
+        private readonly TelegramService $telegramService
     )
     {
     }
@@ -22,9 +22,11 @@ class SendToTelegramListener implements ShouldQueue
         $data = [];
         $data['title'] = $event->getTitle();
         $data['chat_id'] = $event->getChatId();
-        $data['message'] = $event->getMessage();
-        $data['end'] = $event->getEnd()->getTimestamp();
-        $data['start'] = $event->getStart()->getTimestamp();
+        $data['description'] = $event->getDescription();
+        $data['end_time'] = $event->getEnd()->getTimestamp();
+        $data['start_time'] = $event->getStart()->getTimestamp();
+        $data['color'] = $event->getColor();
+
         $this->telegramService->sendEvent($data);
     }
 }

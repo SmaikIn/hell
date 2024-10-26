@@ -5,13 +5,14 @@ namespace App\Events;
 use Carbon\Carbon;
 use Illuminate\Foundation\Events\Dispatchable;
 
-readonly class SendToTelegramEvent
+final readonly class SendToTelegramEvent
 {
     use Dispatchable;
 
     public function __construct(
         private string $title,
-        private string $message,
+        private string $description,
+        private string $color,
         private Carbon $start,
         private Carbon $end,
         private string $chat_id,
@@ -24,9 +25,14 @@ readonly class SendToTelegramEvent
         return $this->title;
     }
 
-    public function getMessage(): string
+    public function getDescription(): string
     {
-        return $this->message;
+        return $this->description;
+    }
+
+    public function getColor(): string
+    {
+        return $this->color;
     }
 
     public function getStart(): Carbon
@@ -43,4 +49,5 @@ readonly class SendToTelegramEvent
     {
         return $this->chat_id;
     }
+
 }

@@ -28,7 +28,7 @@ class SendNextDayEventNotificationsCommand extends Command
 
         if($events->count() > 0) {
             $tg = resolve(Api::class);
-            $text = view('telegram.morning-event')->render();
+            $text = view('telegram.evening-event')->render();
             $tg->sendMessage([
                 'chat_id' => -1002472839215,
                 'text' => $text,

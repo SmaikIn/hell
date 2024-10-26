@@ -23,8 +23,8 @@ class SendToTelegramListener implements ShouldQueue
         $data['title'] = $event->getTitle();
         $data['chat_id'] = $event->getChatId();
         $data['description'] = $event->getDescription();
-        $data['end_time'] = $event->getEnd()->getTimestamp();
-        $data['start_time'] = $event->getStart()->getTimestamp();
+        $data['end_time'] = $event->getEnd()->format('d-m H:i');
+        $data['start_time'] = $event->getStart()->format('d-m H:i');
         $data['color'] = $event->getColor();
 
         $this->telegramService->sendEvent($data);

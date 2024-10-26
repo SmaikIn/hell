@@ -45,6 +45,14 @@ class SendNextDayEventNotificationsCommand extends Command
                 end: Carbon::parse($event->end_time),
                 chat_id: -1002472839215,
             ));
+            $dispatcher->dispatch(new SendToTelegramEvent(
+                title: $event->title,
+                description: $event->description,
+                color: $event->color,
+                start: Carbon::parse($event->start_time),
+                end: Carbon::parse($event->end_time),
+                chat_id: -1002224260721,
+            ));
         }
     }
 }

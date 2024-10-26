@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendToTelegramEvent;
+use Illuminate\Support\Facades\Event;
 use Telegram\Bot\Api;
 
 class TelegramController extends Controller
@@ -14,13 +16,23 @@ class TelegramController extends Controller
 
     public function index()
     {
+
+        $event = \App\Models\Event::find(2);
+        Event::dispatch(new SendToTelegramEvent(
+           title: $event->title,
+            description: $event->description,
+            color: $event->color,
+            start: $event->start_time,
+            end: $event->end_time,
+            chat_id: -1002472839215,
+        ));
         //$response = $this->telegram->getUpdates();
-        $this->telegram->sendMessage(
+       /* $this->telegram->sendMessage(
             [
                 'chat_id' => '-1002472839215',
                 'text' => 'девил чорт',
             ]
-        );
+        );*/
         //dump($response);
     }
 }

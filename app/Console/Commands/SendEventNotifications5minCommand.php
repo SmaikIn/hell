@@ -33,7 +33,7 @@ class SendEventNotifications5minCommand extends Command
                 end: Carbon::parse($event->end_time),
                 chat_id: -1002472839215,
             ));
-            $event->is_hour = true;
+            $event->is_send = true;
             $event->save();
         }
     }

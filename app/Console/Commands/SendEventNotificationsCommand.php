@@ -22,7 +22,7 @@ class SendEventNotificationsCommand extends Command
         $oneHourFromNow = $now->copy()->addHour();
 
         // Получаем события, которые начинаются через час
-        $events = Event::whereBetween('start_time', [$now, $oneHourFromNow])->where('is_hour', false)->get();
+        $events = Event::whereBetween('start_time', [$now, $oneHourFromNow])->where('is_hour', 0)->get();
 
         foreach ($events as $event) {
             $dispatcher->dispatch(new SendToTelegramEvent(

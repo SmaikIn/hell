@@ -18,7 +18,7 @@ class TelegramController extends Controller
 
     public function index()
     {
-
+        dd(1);
         $event = \App\Models\Event::find(2);
         Event::dispatch(new SendToTelegramEvent(
             title: $event->title,

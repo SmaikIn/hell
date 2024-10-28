@@ -32,6 +32,11 @@ class SendDailyEventNotificationsCommand extends Command
                 'text' => $text,
                 'parse_mode' => 'Markdown'
             ]);
+            $tg->sendMessage([
+                'chat_id' => -1002224260721,
+                'text' => $text,
+                'parse_mode' => 'Markdown'
+            ]);
         }
 
         foreach ($events as $event) {

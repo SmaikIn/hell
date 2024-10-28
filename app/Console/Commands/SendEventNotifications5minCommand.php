@@ -10,7 +10,7 @@ use Illuminate\Events\Dispatcher;
 
 class SendEventNotifications5minCommand extends Command
 {
-    protected $signature = 'send:event-notifications';
+    protected $signature = 'send:event-notifications-5min';
 
     protected $description = 'Command description';
 
